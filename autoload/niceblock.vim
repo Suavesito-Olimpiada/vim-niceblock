@@ -25,15 +25,15 @@
 
 
 
-function! niceblock#force_blockwise(next_key)
-  return s:setup_keyseq_table[a:next_key][mode()]
-endfunction
-
 let s:setup_keyseq_table = {
 \   'I': {'v': "\<C-v>I", 'V': "\<C-v>^o^I", "\<C-v>": 'I'},
 \   'A': {'v': "\<C-v>A", 'V': "\<C-v>0o$A", "\<C-v>": 'A'},
 \   'gI': {'v': "\<C-v>0I", 'V': "\<C-v>0o$I", "\<C-v>": '0I'},
 \ }
+
+function! niceblock#force_blockwise(next_key)
+  return s:setup_keyseq_table[a:next_key][mode()]
+endfunction
 
 
 
